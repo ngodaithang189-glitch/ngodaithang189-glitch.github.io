@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DU HỌC TH - Nhắn Zalo tư vấn</title>
+<style>
+body{font-family:system-ui,sans-serif;background:#f4f6fb;display:flex;min-height:100vh;align-items:center;justify-content:center;margin:0;color:#1a2b4c;text-align:center}
+.box{padding:24px}
+a{display:inline-block;margin-top:16px;padding:12px 24px;background:#0068ff;color:#fff;border-radius:8px;text-decoration:none;font-weight:600}
+</style>
+</head>
+<body>
+<div class="box">
+<h2>DU HỌC TH</h2>
+<p>Đang mở Zalo để tư vấn cho bạn...</p>
+<a id="go" href="https://zalo.me/4377841838799241196">Mở Zalo ngay</a>
+</div>
+<script>
+(function(){
+var OA="https://zalo.me/4377841838799241196";
+var HOOK="https://hook.eu1.make.com/iwobqpsu089u22z23psykegv08t416tm";
+var p=new URLSearchParams(location.search);
+var src=(p.get("src")||"khac").slice(0,40);
+var d=/Mobi|Android|iPhone/i.test(navigator.userAgent)?"dien thoai":"may tinh";
+var t=new Date().toLocaleString("vi-VN",{timeZone:"Asia/Ho_Chi_Minh"});
+var q="src="+encodeURIComponent(src)+"&time="+encodeURIComponent(t)+"&ref="+encodeURIComponent((document.referrer||"").slice(0,100))+"&device="+encodeURIComponent(d);
+var done=false;
+function go(){ if(done)return; done=true; location.href=OA; }
+try{ new Image().src=HOOK+"?"+q; }catch(e){}
+setTimeout(go,900);
+})();
+</script>
+</body>
+</html>
